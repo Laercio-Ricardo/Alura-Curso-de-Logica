@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Super Mario World</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #4c8bff; /* Azul característico do céu de Super Mario World */
+            font-family: 'Press Start 2P', cursive;
+            margin: 0;
+            padding: 0;
+        }
+        .login-container {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+        .login-header h2 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+        .login-header p {
+            color: #333;
+        }
+        .form-group input {
+            height: 45px;
+            border-radius: 30px;
+            padding: 10px 20px;
+            background: #f8f9fa;
+            border: 1px solid #ced4da;
+            font-family: 'Press Start 2P', cursive;
+            color: #495057;
+        }
+        .form-group input::placeholder {
+            color: #ced4da;
+        }
+        .btn-custom {
+            background: #ff652f; /* Laranja característico do chapéu do Mario */
+            border: none;
+            border-radius: 30px;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            width: 100%;
+            transition: background 0.3s;
+            font-family: 'Press Start 2P', cursive;
+        }
+        .btn-custom:hover {
+            background: #e6501c; /* Laranja mais escuro ao passar o mouse */
+        }
+        .message {
+            margin-top: 20px;
+        }
+        .mario-icon {
+            width: 300px;
+            height: auto;
+            vertical-align: middle;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-header">
+            <h2><img src="https://s2-techtudo.glbimg.com/EQZEx1S6lMG8AXu1F-wtkRwINaM=/0x0:695x454/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_08fbf48bc0524877943fe86e43087e7a/internal_photos/bs/2021/H/f/HlZxAgQeK3LA6y7eAS5A/2014-05-05-super-mario-world-1.jpg" alt="Mario" class="mario-icon"></h2>
+            <p>Login</p>
+        </div>
+        <form id="loginForm">
+            <div class="form-group mb-3">
+                <input type="text" class="form-control" id="username" name="username" placeholder="Usuário" required>
+            </div>
+            <div class="form-group mb-3">
+                <input type="password" class="form-control" id="password" name="password" placeholder="Senha" required>
+            </div>
+            <button type="submit" class="btn btn-custom">Entrar</button>
+        </form>
+        <div id="message" class="message"></div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            
+            const messageDiv = document.getElementById('message');
+            
+            // Simulação de lógica de autenticação
+            if (username === 'admin' && password === 'admin') {
+                messageDiv.textContent = 'Login bem-sucedido!';
+                messageDiv.style.color = 'green';
+                // Redirecionar para outra página após 1 segundo
+                setTimeout(() => {
+                    window.location.href = 'pagina_sucesso.html';
+                }, 1000);
+            } else {
+                messageDiv.textContent = 'Usuário ou senha incorretos!';
+                messageDiv.style.color = 'red';
+            }
+        });
+    </script>
+</body>
+</html>

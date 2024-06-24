@@ -1,0 +1,280 @@
+/* Reset de estilos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo global */
+body {
+    font-family: "Montserrat", sans-serif;
+    background-color: #ffffff;
+    color: #333333; /* Tom de cinza escuro */
+}
+
+/* Cabeçalho */
+.header {
+    background-color: #f8f9fa; /* Cor de fundo do header */
+    color: black; /* Cor do texto */
+    padding: 10px 0; /* Espaçamento interno */
+    position: fixed; /* Fixa o header no topo da página */
+    width: 100%; /* Largura total */
+    top: 0; /* Alinha no topo */
+    z-index: 1000; /* Z-index para garantir que fique sobre outros elementos */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+.header .container_menu {
+    display: flex;
+    justify-content: space-between; /* Alinha os elementos ao longo da largura */
+    align-items: center; /* Alinha verticalmente ao centro */
+    max-width: 960px; /* Largura máxima do conteúdo */
+    margin: 0 auto; /* Centraliza horizontalmente */
+}
+
+.header .menu {
+    display: flex; /* Flex container para os links do menu */
+}
+
+.header .menu a {
+    padding: 10px 15px; /* Espaçamento interno dos links */
+    text-decoration: none; /* Remove sublinhado */
+    color: black; /* Cor do texto */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Transição suave */
+}
+
+.header .menu a:hover {
+    background-color: #007bff; /* Cor de fundo ao passar o mouse */
+    color: #ffffff; /* Cor do texto ao passar o mouse */
+}
+
+/* Estilo do título com destaque */
+.titulo_destaque {
+    color: #007bff; /* Azul para destaque */
+}
+
+/* Seção de Apresentação */
+.apresentacao {
+    margin: 5% 15%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 82px;
+}
+
+.apresentacao_textos {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.apresentacao_conteudo_titulo {
+    font-size: 20px;
+}
+
+.apresentacao_conteudo_paragrafo {
+    font-size: 15px;
+}
+
+.apresentacao_botoes {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 32px;
+}
+
+/* Estilos para os botões */
+.apresentacao_links_botoes {
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    width: 280px;
+    text-align: center;
+    border-radius: 8px;
+    font-size: 15px;
+    padding: 20px 0;
+    text-decoration: none;
+    color: #333333; /* Tom de cinza escuro para o texto */
+    background-color: transparent;
+    border: 1px solid #ced4da; /* Cinza claro para a borda */
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.apresentacao_links_botoes:hover {
+    background-color: #007bff; /* Cor de fundo ao passar o mouse */
+    color: #ffffff; /* Cor do texto ao passar o mouse */
+    border-color: #007bff; /* Cor da borda ao passar o mouse */
+}
+
+/* Estilos para imagens */
+.imagem {
+    width: 100%;
+}
+
+/* Rodapé */
+.rodape {
+    background-color: #f8f9fa; /* Fundo neutro claro */
+    color: #343a40; /* Texto em cinza escuro */
+    padding: 20px 0;
+    text-align: center;
+    position: relative; /* Para posicionamento absoluto dos elementos */
+}
+
+.rodape .container {
+    max-width: 960px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center; /* Alinha os elementos ao final (direita) do container */
+    align-items: center; /* Alinha verticalmente ao centro */
+    position: relative; /* Para posicionamento absoluto dos elementos */
+}
+
+.rodape .social-icons {
+    display: flex;
+    align-items: center; /* Alinha verticalmente ao centro */
+}
+
+.rodape .social-icons a {
+    margin-left: 10px; /* Espaçamento entre os ícones */
+    font-size: 20px;
+    color: inherit;
+    position: relative;
+    overflow: hidden;
+}
+
+.rodape .social-icons a::before, .rodape .social-icons a::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(0, 86, 179, 0.3); /* Cor do efeito de onda */
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+}
+
+.rodape .social-icons a:hover::before, .rodape .social-icons a:hover::after {
+    animation: wave 0.6s ease-out;
+}
+
+.rodape .social-icons a.linkedin {
+    color: #0077b5; /* LinkedIn azul */
+}
+
+.rodape .social-icons a.github {
+    color: #333; /* GitHub cinza */
+}
+
+.rodape p {
+    margin: 0;
+    font-size: 18px;
+    color: #343a40; /* Cinza escuro */
+    margin-right: 10px; /* Espaçamento entre o nome e os ícones */
+}
+
+.rodape .social-icons a {
+    margin-left: 10px; /* Espaçamento entre os ícones */
+    font-size: 20px;
+    color: #333; /* Cor padrão dos ícones */
+    position: relative;
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.rodape .social-icons a:hover {
+    color: #0077b5; /* Cor do LinkedIn ao passar o mouse */
+    transform: translateY(-3px); /* Efeito de levantamento */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+.rodape .social-icons a.linkedin:hover {
+    color: #0077b5; /* Cor do LinkedIn ao passar o mouse */
+}
+
+.rodape .social-icons a.github:hover {
+    color: #333; /* Cor do GitHub ao passar o mouse */
+}
+
+/* Seção Sobre Mim */
+.sobre-mim {
+    padding: 50px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #fff;
+}
+
+.sobre-mim .card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    padding: 20px;
+    text-align: left;
+}
+
+.sobre-mim .card h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center;
+}
+
+.sobre-mim .card p {
+    font-size: 18px;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+/* Media querys */
+@media (max-width: 1200px) {
+    .apresentacao {
+        flex-direction: column;
+    }
+}
+
+/* Estilo para a imagem da seta para cima */
+.arrow-img {
+    width: 40px; /* Ajuste o tamanho conforme necessário */
+    height: auto;
+    vertical-align: middle; /* Alinha verticalmente dentro do link */
+}
+
+/* Estilo opcional para o botão de volta ao topo */
+.scroll-to-top {
+    position: fixed;
+    bottom: 40px;
+    right: 20px;
+    background-color: #f7f9fc;
+    padding: 10px;
+    border-radius: 50%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+.scroll-to-top:hover {
+    background-color: #27c957;
+    cursor: pointer;
+}
+
+/* Animação para o efeito de onda */
+@keyframes wave {
+    0% {
+        width: 0;
+        height: 0;
+        opacity: 1;
+    }
+    100% {
+        width: 200%;
+        height: 200%;
+        opacity: 0;
+    }
+}
